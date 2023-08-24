@@ -48,11 +48,11 @@ const data = [
 ];
 
 app.get("/magic/:data",(req,res)=>{
-    if(req.params.data){
-        res.send("<h1>"+data+"</h1>")
-    }else{
-        res.send('<h1> data not found</h1>')
-    }
+    const paramData = req.params.data
+
+     const random = Math.floor(Math.random() * data.length);
+    res.send(paramData +" "+ data[random])
+    
     
 });
 
